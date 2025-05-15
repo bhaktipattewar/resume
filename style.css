@@ -326,6 +326,56 @@ p {
 }
 /* End Services Section */
 
+
+
+
+
+
+#skillbars {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.skills-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.skill {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.skill span {
+  font-weight: bold;
+}
+
+.skill-bar {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.skill-fill {
+  background: linear-gradient(to right, #ff6b6b, #fbc531);
+  height: 100%;
+  width: 0;
+  border-radius: 20px;
+  transition: width 2s ease;
+}
+
+
+
+
+
+
+
+
+
+
 /* Projects section */
 #projects .projects {
 	flex-direction: column;
@@ -398,6 +448,66 @@ p {
 	transform: scale(1.1);
 }
 /* End Projects section */
+
+
+
+
+
+
+/* TIMELINE section */
+#timeline {
+  padding: 60px 20px;
+  background: #fdfdfd;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding-left: 40px;
+  border-left: 3px solid #6a11cb;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: #6a11cb;
+  border-radius: 50%;
+  position: absolute;
+  left: -11px;
+  top: 0;
+}
+
+.timeline-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.timeline-content {
+  background: #eee;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+}
+
+/* End Timeline section */
+
+
+
+
+
+
+
 
 /* About Section */
 #about .about {
