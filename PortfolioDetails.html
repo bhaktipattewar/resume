@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Details - Bhakti Pattewar</title>
+  <link rel="stylesheet" href="portfolio-details.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>My Portfolio Details</h1>
+    <nav>
+      <a href="index.html">← Back to Home</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Overview</h2>
+      <p>Welcome to the detailed view of my accomplishments, certifications, and skills. Below you'll find visual and interactive highlights of my work.</p>
+    </section>
+
+    <section class="skills">
+      <h2>Technical Skills</h2>
+      <div class="skill-bar">
+        <span>HTML</span>
+        <div class="bar"><div class="progress html"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>CSS</span>
+        <div class="bar"><div class="progress css"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>JavaScript</span>
+        <div class="bar"><div class="progress js"></div></div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="certificates">
+  <h2 class="section-title">Certifi<span>c</span>ates</h2>
+  <div class="slideshow-container">
+    
+    
+    <div class="certificate-slide fade">
+      <img src="cert5.jpg" alt="Certificate 1">
+    </div>
+
+
+   <div class="certificate-slide fade">
+      <img src="cert6.jpg" alt="Certificate 2">
+    </div>
+
+    <div class="certificate-slide fade">
+      <img src="cert7.jpg" alt="Certificate 3">
+    </div>
+
+   <div class="certificate-slide fade">
+      <img src="cert4.jpg" alt="Certificate 4">
+    </div>
+
+   <div class="certificate-slide fade">
+      <img src="cert3.jpg" alt="Certificate 5">
+    </div>
+
+   <div class="certificate-slide fade">
+      <img src="cert2.jpg" alt="Certificate 6">
+    </div>
+
+  
+
+
+    <!-- Add more slides if needed -->
+
+    <!-- Navigation dots -->
+    <div class="dots-container">
+      <span class="dot" onclick="showSlide(1)"></span>
+      <span class="dot" onclick="showSlide(2)"></span>
+      <span class="dot" onclick="showSlide(3)"></span>
+      <span class="dot" onclick="showSlide(4)"></span>
+      <span class="dot" onclick="showSlide(5)"></span>
+      <span class="dot" onclick="showSlide(6)"></span>
+    </div>
+  </div>
+</section>
+
+
+  <section id="video-demo" class="video-demo-section">
+  <div class="container">
+    <h2 class="section-title">🎥 Video Demonstrations</h2>
+    <p class="section-desc">Click on the project image to watch the related video demonstration.</p>
+
+    <div class="video-grid">
+      <!-- Project 1 -->
+      <div class="video-card" onclick="openModal('demo1.mp4')">
+        <img src="afm.png" alt="Project 1 Thumbnail" />
+        <div class="overlay">Watch Demo 1</div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="video-card" onclick="openModal('demo2.mp4')">
+        <img src="emovr.png" alt="Project 2 Thumbnail" />
+        <div class="overlay">Watch Demo 2</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for fullscreen video -->
+  <div id="videoModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <video id="modalVideo" controls autoplay></video>
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Bhakti Pattewar | All rights reserved.</p>
+  </footer>
+
+  <script src="portfolio-details.js"></script>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".certificate-slide");
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = "none";
+      dots[i].classList.remove("active");
+    });
+
+    slides[index - 1].style.display = "block";
+    dots[index - 1].classList.add("active");
+    currentSlide = index;
+  }
+
+  function autoSlide() {
+    currentSlide++;
+    if (currentSlide > slides.length) currentSlide = 1;
+    showSlide(currentSlide);
+    setTimeout(autoSlide, 4000); // 4 seconds per slide
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlide(1);
+    autoSlide();
+  });
+</script>
+
+<script>
+  const fadeEls = document.querySelectorAll(".fade-in");
+
+  const appearOnScroll = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeEls.forEach(el => {
+    appearOnScroll.observe(el);
+  });
+</script>
+
+<script>
+  function openModal(videoSrc) {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("modalVideo");
+
+    video.src = videoSrc;
+    modal.style.display = "block";
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("modalVideo");
+
+    video.pause();
+    video.src = "";
+    modal.style.display = "none";
+  }
+</script>
+
+
+
+
+</body>
+</html>

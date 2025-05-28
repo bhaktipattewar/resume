@@ -1,0 +1,245 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.header {
+  background: #222;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.header a {
+  color: #00e6e6;
+  text-decoration: none;
+}
+
+.container {
+  padding: 2rem;
+}
+
+h2 {
+  border-left: 5px solid #00e6e6;
+  padding-left: 10px;
+  color: #222;
+  margin-top: 2rem;
+}
+
+.skill-bar {
+  margin: 1rem 0;
+}
+
+.skill-bar span {
+  display: block;
+  font-weight: bold;
+}
+
+.bar {
+  width: 100%;
+  background: #ddd;
+  height: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 25px;
+  background: #00e6e6;
+  width: 0%;
+  animation: fillBar 2s ease-in forwards;
+}
+
+.html { width: 90%; }
+.css { width: 85%; }
+.js { width: 75%; }
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: inherit; }
+}
+
+#certificates {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 400px;
+  margin: auto;
+}
+
+.certificate-slide {
+  display: none;
+  position: relative;
+}
+
+.certificate-slide img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s;
+}
+
+.dots-container {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #555;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+.achievements ul {
+  list-style: square inside;
+  line-height: 1.6;
+}
+
+.video-demo-section {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.video-demo-section .section-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.video-demo-section .section-desc {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.video-card video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  filter: brightness(0.85);
+  transition: 0.3s ease;
+}
+
+.video-card:hover video {
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.video-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.9);
+}
+
+.modal video {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.modal .close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+.footer {
+  text-align: center;
+  background: #222;
+  color: #aaa;
+  padding: 1rem;
+  margin-top: 2rem;
+}
